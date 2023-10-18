@@ -2,7 +2,9 @@ const express = require("express");
 const errorHandler = require("./middleware/errorHandler");
 const dotenv = require("dotenv").config();
 const asynchandler = require("express-async-handler");
+const connectdb = require("./confing/dbConnection");
 
+connectdb();
 const app = express();
 
 const port = process.env.PORT || 5000;

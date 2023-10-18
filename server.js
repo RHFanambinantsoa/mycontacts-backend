@@ -1,5 +1,7 @@
 const express = require("express");
+const errorHandler = require("./middleware/errorHandler");
 const dotenv = require("dotenv").config();
+const asynchandler = require("express-async-handler");
 
 const app = express();
 
@@ -9,6 +11,7 @@ app.use(express.json());
 //body parse, rehefa misy body ilay requete avy any am client d mila parsena en json, c'est à peu près ça.
 
 app.use("/api/contacts", require("./routes/contactRoutes"));
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`server running on port ${port}`);

@@ -13,6 +13,7 @@ app.use(express.json());
 //body parse, rehefa misy body ilay requete avy any am client d mila parsena en json, c'est à peu près ça.
 
 app.use("/api/contacts", require("./routes/contactRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 app.use(errorHandler);
 
 app.listen(port, () => {
